@@ -1,9 +1,9 @@
 const { assert } = require('console')
 const fs = require('fs')
 
-let path = fs.existsSync('./input.txt') ? './input.txt' : 0
+let path = fs.existsSync('../input.txt') ? '../input.txt' : 0
 let output
-if (path && fs.existsSync('./output.txt')) output = fs.readFileSync('./output.txt', 'utf8').trim().split('\n')
+if (path && fs.existsSync('../output.txt')) output = fs.readFileSync('../output.txt', 'utf8').trim().split('\n')
 
 const input = fs.readFileSync(path, 'utf8').trim().split('\n')
 let currentLine = 0
@@ -49,7 +49,7 @@ function solve(matrix) {
 
 function Log(text, index) {
   console.log(text)
-  if (path && fs.existsSync('./output.txt')) {
+  if (path && fs.existsSync('../output.txt')) {
     assert(text == output[index - 1], `Expected to get ${output[index - 1]}, got ${text}`)
     console.log()
   }
